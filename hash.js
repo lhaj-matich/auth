@@ -12,14 +12,11 @@ const jwt = require('jsonwebtoken');
 //     })
 // })
 
-const id = '1283d19dj19d3j8dd33';
-const secretWord = 'supersecret';
 
-const secretToken = 'eyJhbGciOiJIUzI1NiJ9.MTI4M2QxOWRqMTlkM2o4ZGQzMw.dbjuc_mOJMFMMYHl_nn5x3j2-zSS59kIkZ4_SUh5QJA';
+const secretWord = process.env.S_WORD;
+
+const secretToken = process.env.S_TOKEN;
 
 const token = jwt.sign(id, secretWord);
 const decodeToken = jwt.verify(secretToken, secretWord);
-console.log(token);
-console.log(decodeToken);
-
 
